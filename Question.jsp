@@ -20,7 +20,7 @@ answer[0][1] = "Tokyo";
 answer[0][2] = "seol";
 answer[0][3] = "Beijing";
 
-answer[1][0] = "Ram chandra pudel";
+answer[1][0] = "Ram chandra poudel";
 answer[1][1] = "Vidhya devi bhandari";
 answer[1][2] = "Kp oli";
 answer[1][3] = "Pranchanda";
@@ -32,11 +32,24 @@ answer[2][3] = "Russia";
 
 
 String num=request.getParameter("numb");
+String ans=request.getParameter("ans");
+
 int numb=0;
+int score;
+score = Integer.parseInt(session.getAttribute("score").toString());
+
 if(num==null){
     numb=0;
 }else{
     numb=Integer.parseInt(num);
+}
+if(ans!=null){
+if(ans.equals(correctAns[numb-1])){
+  out.print("Correct!");
+  score++;
+  session.setAttribute("score",score);
+}
+out.print("You got " + score +"out of 3");
 }
 %>
 <!DOCTYPE html>

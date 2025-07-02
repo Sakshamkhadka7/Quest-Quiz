@@ -68,6 +68,7 @@
          if(myUser.equals("admin") && myPass.equals("Nepal123")){
        response.sendRedirect("Question.jsp");
        session.setAttribute("user","admin");
+       session.setAttribute("score","0");
     }else{
         out.print("Login failure");
     }
