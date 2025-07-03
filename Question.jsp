@@ -9,9 +9,10 @@ questions[0] = "What is the capital of japan";
 questions[1] = "Who is current president of nepal";
 questions[2] = "In which continent turkey lies";
 
+int totalQuest=3; // Total number of questions
 String[] correctAns = new String[3];
 correctAns[0] = "Tokyo";
-correctAns[1] = "Ran chandra poudel";
+correctAns[1] = "Ram chandra poudel";
 correctAns[2] = "Europe";
 
 String[][] answer = new String[3][4];
@@ -43,13 +44,18 @@ if(num==null){
 }else{
     numb=Integer.parseInt(num);
 }
+
 if(ans!=null){
 if(ans.equals(correctAns[numb-1])){
   out.print("Correct!");
   score++;
   session.setAttribute("score",score);
 }
-out.print("You got " + score +"out of 3");
+out.print("You got " + score + " out of 3");
+}
+if(numb==totalQuest){
+  response.sendRedirect("result.jsp");
+  return;
 }
 %>
 <!DOCTYPE html>

@@ -1,0 +1,1 @@
+Your score is <%= session.getAttribute("score") %> out of 3
